@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyHome</string>
+    <string name="urlaki">http://192.168.2.40/</string>
+</resources>

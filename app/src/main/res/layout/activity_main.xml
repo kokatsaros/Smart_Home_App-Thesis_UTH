@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_weight="0.02"
+        android:background="@color/myred"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_gravity="center"
+                android:id="@+id/homelock"
+                android:layout_margin="10dp"
+                android:background="@drawable/unlockbg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/round_lock_open_black_48">
+            </ImageButton>
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_margin="4dp"
+            android:background="@color/myred"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="right|center">
+
+            <TextView
+                android:layout_margin="4dp"
+                android:id="@+id/tempa"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:background="@drawable/white_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temperature: Unavailable"
+                android:textSize="18sp"
+                app:drawableLeftCompat="@drawable/round_thermostat_black_18">
+
+            </TextView>
+            <TextView
+                android:layout_margin="4dp"
+                android:id="@+id/humi"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:background="@drawable/white_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Humidity: Unavailable"
+                android:textSize="18sp"
+                app:drawableStartCompat="@drawable/round_water_drop_black_18">
+
+            </TextView>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="#D3D3D3"
+        android:layout_weight="0.7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button1"
+                app:backgroundTint="@null"
+                android:backgroundTint="@color/mygrey"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_margin="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Bathroom"
+                android:textAllCaps="false"
+                app:iconGravity="textTop"
+                app:iconTint="@color/black"
+                app:icon="@drawable/round_shower_black_48" />
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button2"
+                app:backgroundTint="@null"
+                android:backgroundTint="@color/mygrey"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_margin="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Living Room"
+                android:textAllCaps="false"
+                app:iconGravity="textTop"
+                app:iconTint="@color/black"
+                app:icon="@drawable/round_weekend_black_48" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="0.3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button3"
+                app:backgroundTint="@null"
+                android:backgroundTint="@color/mygrey"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_margin="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Kitchen"
+                android:textAllCaps="false"
+                app:iconGravity="textTop"
+                app:iconTint="@color/black"
+                app:icon="@drawable/round_kitchen_black_48" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button4"
+                app:backgroundTint="@null"
+                android:backgroundTint="@color/mygrey"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_margin="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Office"
+                android:textAllCaps="false"
+                app:iconGravity="textTop"
+                app:iconTint="@color/black"
+                app:icon="@drawable/round_chair_alt_black_48" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="0.3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button5"
+                app:backgroundTint="@null"
+                android:backgroundTint="@color/mygrey"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_margin="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Bedroom"
+                android:textAllCaps="false"
+                app:iconGravity="textTop"
+                app:iconTint="@color/black"
+                app:icon="@drawable/round_king_bed_black_48" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button6"
+                app:backgroundTint="@null"
+                android:backgroundTint="@color/mygrey"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_margin="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Garage"
+                android:textAllCaps="false"
+                app:iconGravity="textTop"
+                app:iconTint="@color/black"
+                app:icon="@drawable/ic_garage_variant_black_48dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="0.002"
+        android:background="#0c1218"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/button7"
+            android:backgroundTint="@color/myblue"
+            android:layout_margin="4dp"
+            android:text="Camera"
+            android:textColor="@color/white"
+            android:layout_weight="0.3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+        </Button>
+
+        <Button
+            android:id="@+id/button8"
+            android:backgroundTint="@color/myred"
+            android:layout_margin="4dp"
+            android:text="Heater"
+            android:textColor="@color/white"
+            android:layout_weight="0.3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+        </Button>
+        <ImageButton
+            android:layout_gravity="center"
+            android:id="@+id/settings"
+            android:layout_margin="10dp"
+            android:background="@color/myblue2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/round_settings_white_48">
+        </ImageButton>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
+
+
+
+
+

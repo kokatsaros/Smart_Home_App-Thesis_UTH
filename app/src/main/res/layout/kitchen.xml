@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_weight="0.00002"
+        android:background="@color/myred"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/back"
+                android:layout_margin="7dp"
+                android:background="@drawable/lockbg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/round_arrow_back_white_48"
+                android:layout_marginLeft="8dp">
+
+            </ImageButton>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_margin="4dp"
+            android:background="@color/myred"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_margin="4dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kitchen"
+                android:textSize="33sp">
+
+            </TextView>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@color/mygrey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="right|center">
+        <TextView
+            android:layout_margin="4dp"
+            android:id="@+id/temp_kitchen"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:background="@drawable/white_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Temperature: Unavailable"
+            android:textSize="18sp"
+            app:drawableLeftCompat="@drawable/round_thermostat_black_18">
+
+        </TextView>
+        <TextView
+            android:layout_margin="4dp"
+            android:id="@+id/humi_kitchen"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:background="@drawable/white_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Humidity: Unavailable"
+            android:textSize="18sp"
+            app:drawableStartCompat="@drawable/round_water_drop_black_18">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/mygrey"
+        android:layout_weight="0.8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:background="@color/mygrey"
+            android:layout_weight="0.3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:background="@drawable/buttonsbg"
+                android:layout_margin="7dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_margin="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/round_lightbulb_black_48">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Lights"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="22sp">
+                    </TextView>
+                </LinearLayout>
+                <LinearLayout
+                     android:gravity="center|end"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:layout_marginRight="8dp">
+
+                    <com.suke.widget.SwitchButton
+                        app:sb_checked_color="@color/myred"
+                        app:sb_uncheckcircle_color="@color/myred"
+                        android:id="@+id/lights_kitchen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </com.suke.widget.SwitchButton>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/buttonsbg"
+                android:layout_margin="7dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/round_kitchen_black_48">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Refrigerator"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="22sp">
+                    </TextView>
+                    <LinearLayout
+                        android:gravity="center|end"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp">
+                        <com.suke.widget.SwitchButton
+                            app:sb_checked_color="@color/myred"
+                            app:sb_uncheckcircle_color="@color/myred"
+                            android:id="@+id/refrigerator"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        </com.suke.widget.SwitchButton>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:background="@drawable/buttonsbg"
+                android:layout_margin="7dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_margin="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/round_outlet_black_48">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Outlet"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="22sp">
+                    </TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center|end"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="8dp">
+
+                    <com.suke.widget.SwitchButton
+                        app:sb_checked_color="@color/myred"
+                        app:sb_uncheckcircle_color="@color/myred"
+                        android:id="@+id/outlet_kitchen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </com.suke.widget.SwitchButton>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+
