@@ -5,17 +5,16 @@
 #define DHTPIN 2 // pin of DHT sensor   
 #define DHTTYPE DHT11 // DHT 11
 
-const int sensorMin = 0;     // minimum timi aisthitirwn
-const int sensorMax = 1023;  // maximum timi aisthitirwn
+const int sensorMin = 0;     // Analog sensor min value
+const int sensorMax = 1023;  // Analog sensor max value
 int range1,range2;
-//int timerunning=0;
 
-// Arxikopoihsh DHT aisthitira
+// initialization DHT sensor
 DHT dht(DHTPIN, DHTTYPE);
 
-int ledPin = 5; // Xrisimopoiw to pin 4 gia to led 
-int pirPin = 3; // kai to pin 3 gia ton aisthitira kinisis
-int pirValue; // Timi tou aisthitira (HIGH - LOW)
+int ledPin = 5; // Pin 4  used for led 
+int pirPin = 3; // Pin 3 for PIR motion sensor
+int pirValue; // The value of Motion sensor(HIGH - LOW)
 
 // mac address (my arduino's default mac)
 byte mac[] = {
@@ -29,6 +28,7 @@ EthernetServer server(80);// port
 
 // Setup function runs only once,when arduino powers on.
 void setup() {
+  
   // ledPin defined as output. LOW start value
   pinMode(ledPin,OUTPUT);
   digitalWrite(ledPin, LOW);
@@ -46,6 +46,7 @@ void setup() {
   if (Ethernet.hardwareStatus() == EthernetNoHardware) {
     Serial.println("Ethernet shield was not found.  Sorry, can't run without hardware. :(");
   }
+  // Check if Ethernet cable is on
   if (Ethernet.linkStatus() == LinkOFF) {
     Serial.println("Ethernet cable is not connected.");
   }
@@ -53,7 +54,9 @@ void setup() {
   server.begin();
   Serial.print("server is at ");
   Serial.println(Ethernet.localIP());
+  
 }
+
 
 void loop() {
   
@@ -76,33 +79,19 @@ void loop() {
         if (c == '\n' && currentLineIsBlank) {
           // send a standard http response header
           client.println("HTTP/1.1 200 OK");
-          client.println("Content-Type: text/html");
+          client.println("Content-Type: text");
           client.println("Connection: close");  // the connection will be closed after completion of the response
-          //client.println("Refresh: 5");  // refresh the page automatically every 5 sec
           client.println();
-          //client.println(F("<!DOCTYPE HTML>"));
-          //client.println(F("<html>"));
-          //client.println(F("Temperature:"));
           client.print(dht.readTemperature());
           client.print(" ");
-          //client.println(F("Humidity:"));
           client.print(dht.readHumidity());
           client.print(" ");          
-          //client.println(F("<br>"));
           client.print(range1 = map(analogRead(A0), sensorMin, sensorMax, 0, 3));
           client.print(" ");
-          //client.println(F("<br>"));
           client.print(range2 = map(analogRead(A1), sensorMin, sensorMax, 0, 3));
           client.print(" ");
           client.print(pirValue = digitalRead(pirPin));
           client.print(" ");
-          //digitalWrite(ledPin, pirValue);
-          //client.println(F("<br>"));
-          //timerunning = timerunning + 5;
-          //client.println(F("Time up:"));
-          //client.println(timerunning);
-          //client.println(F(" sec"));
-          //client.println(F("</html>"));
           break;
         }
         if (c == '\n') {
@@ -120,4 +109,5 @@ void loop() {
     client.stop();
     Serial.println("client disconnected");
   }
+  
 }
