@@ -121,10 +121,10 @@ public class MainActivity extends AppCompatActivity {
         final Handler handler = new Handler();
         final int delay = 6000; // 6sec ananewsi dedomenwn apo webserver
 
-        Test1();
+        sensor_val();
         handler.postDelayed(new Runnable() {
             public void run() {
-                Test1();
+                sensor_val();
                 handler.postDelayed(this, delay);
             }
         }, delay);
@@ -298,6 +298,7 @@ public class MainActivity extends AppCompatActivity {
                 d.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
                 d.getWindow().setAttributes(lp);
 
+
                 TextView humi = (TextView) d.findViewById(R.id.humi_lr);
                 TextView temp=(TextView) d.findViewById(R.id.temp_lr);
                 SwitchButton lall=(SwitchButton) d.findViewById(R.id.lights_lr);
@@ -312,13 +313,13 @@ public class MainActivity extends AppCompatActivity {
 
 
                 temparc=sharedPreferenceslr.getInt("tempac",17);
-                tempac.setText(""+temparc);
+                tempac.setText(""+temparc+"°C");
 
                 up.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         if (temparc<32){
-                            tempac.setText(""+(temparc+1));
+                            tempac.setText(""+(temparc+1)+"°C");
                             temparc+=1;
                         }
                     }
@@ -328,7 +329,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         if (temparc>14){
-                            tempac.setText(""+(temparc-1));
+                            tempac.setText(""+(temparc-1)+"°C");
                             temparc-=1;
                         }
                     }
@@ -561,13 +562,13 @@ public class MainActivity extends AppCompatActivity {
 
 
                 temparc=sharedPreferencesoff.getInt("tempac",17);
-                tempac.setText(""+temparc);
+                tempac.setText(""+temparc+"°C");
 
                 up.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         if (temparc<30){
-                            tempac.setText(""+(temparc+1));
+                            tempac.setText(""+(temparc+1)+"°C");
                             temparc+=1;
                         }
                     }
@@ -577,7 +578,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         if (temparc>14){
-                            tempac.setText(""+(temparc-1));
+                            tempac.setText(""+(temparc-1)+"°C");
                             temparc-=1;
                         }
                     }
@@ -726,13 +727,13 @@ public class MainActivity extends AppCompatActivity {
                 TextView tempac = (TextView) d.findViewById(R.id.tempac);
 
                 temparc=sharedPreferencesbed.getInt("tempac",17);
-                tempac.setText(""+temparc);
+                tempac.setText(""+temparc+"°C");
 
                 up.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         if (temparc<30){
-                            tempac.setText(""+(temparc+1));
+                            tempac.setText(""+(temparc+1)+"°C");
                             temparc+=1;
                         }
                     }
@@ -742,7 +743,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         if (temparc>14){
-                            tempac.setText(""+(temparc-1));
+                            tempac.setText(""+(temparc-1)+"°C");
                             temparc-=1;
                         }
                     }
@@ -945,7 +946,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void Test1 (){
+    public void sensor_val (){
 
 
 
