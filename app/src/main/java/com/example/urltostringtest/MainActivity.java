@@ -121,10 +121,10 @@ public class MainActivity extends AppCompatActivity {
         final Handler handler = new Handler();
         final int delay = 6000; // 6sec ananewsi dedomenwn apo webserver
 
-        Test1();
+        sensor_val();
         handler.postDelayed(new Runnable() {
             public void run() {
-                Test1();
+                sensor_val();
                 handler.postDelayed(this, delay);
             }
         }, delay);
@@ -945,7 +945,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void Test1 (){
+    public void sensor_val (){
 
 
 
