@@ -26,6 +26,7 @@ public class heater extends AppCompatActivity {
     private TextView textView;
     private SwitchButton switchButton;
     private SeekBar seekBar;
+    private Croller croller;
 
     public boolean heater = false;
     public static final String SHARED_PREFS = "sharedPrefs";
@@ -45,22 +46,33 @@ public class heater extends AppCompatActivity {
 
         com.suke.widget.SwitchButton switchButton = (com.suke.widget.SwitchButton) findViewById(R.id.heater_onoff);
         TextView textView = (TextView) findViewById(R.id.heatertemp);
-        seekBar = (SeekBar) findViewById(R.id.seekBar);
+        Croller croller = (Croller) findViewById(R.id.croller);
+        croller.setMax(35);
+        croller.setMin(1);
+        croller.setStartOffset(45);
 
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+        croller.setOnCrollerChangeListener(new OnCrollerChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                textView.setText(String.valueOf(i)+"°C");
-                saveData();
+            public void onProgressChanged(Croller croller, int progress) {
+                if (progress>= 14) {
+                    textView.setText(progress + "°C");
+                }
+                else {
+                    textView.setText("Off");
+                }
+                SharedPreferences.Editor editor = getSharedPreferences("save", MODE_PRIVATE).edit();
+                editor.putInt("croller",croller.getProgress());
+                editor.apply();
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
+            public void onStartTrackingTouch(Croller croller) {
 
             }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
+            public void onStopTrackingTouch(Croller croller) {
 
             }
         });
@@ -78,7 +90,6 @@ public class heater extends AppCompatActivity {
                     //save prefs for switch
                     SharedPreferences.Editor editor = getSharedPreferences("save", MODE_PRIVATE).edit();
                     editor.putBoolean("value", true);
-                    editor.putInt("my_seekbar",seekBar.getProgress());
                     editor.apply();
                     switchButton.setChecked(true);
                 } else {
@@ -86,7 +97,6 @@ public class heater extends AppCompatActivity {
                     //save prefs for switch
                     SharedPreferences.Editor editor = getSharedPreferences("save", MODE_PRIVATE).edit();
                     editor.putBoolean("value", false);
-                    editor.putInt("my_seekbar",seekBar.getProgress());
                     editor.apply();
                     switchButton.setChecked(false);
                 }
@@ -103,16 +113,9 @@ public class heater extends AppCompatActivity {
         });
 
         // LOAD KAI UPDATE DATA PREFERENCES
-        seekBarProgress = sharedPreferences.getInt("my_seekBar",0);
-        seekBar.setProgress(seekBarProgress);
-        textView.setText(String.valueOf(seekBarProgress)+"°C");
+        seekBarProgress = sharedPreferences.getInt("croller",0);
+        croller.setProgress(seekBarProgress);
+        textView.setText(croller +"°C");
 
     }
-    public void saveData() {
-        SharedPreferences sharedPreferences = getSharedPreferences("save", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt("my_seekBar", seekBar.getProgress());
-        editor.apply();
-    }
-
 }
